@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Living Substance Simulation
 
-## Getting Started
+Living Substance Simulation is a public educational web app that visualizes a fictional human-like nervous system under alcohol use, cannabis use, or both. It is a simplified rule-based model that shows how relief, craving, rebound anxiety, shakiness risk, sleep disruption, panic likelihood, and functional stability may shift over simulated time.
 
-First, run the development server:
+Important boundaries:
+
+- Educational only. Not medical advice.
+- No real patient data.
+- No dangerous-use optimization.
+- Severe withdrawal symptoms need real medical care.
+- The model is intentionally uncertain and simplified.
+
+## Stack
+
+- Next.js 16
+- TypeScript
+- Tailwind CSS 4
+- Custom SVG charts
+
+## Local development
+
+Install dependencies and start the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+This project deploys cleanly on Vercel with no environment variables required.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Suggested CLI flow:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git add .
+git commit -m "Initial commit"
+gh repo create living-substance-simulation --public --source=. --remote=origin --push
+vercel
+vercel deploy
+vercel deploy --prod
+```
 
-## Deploy on Vercel
+## App sections
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Hero and project disclaimer
+- Interactive simulator dashboard
+- Scenario presets
+- Plain-language state explainer
+- Safety panel with 988 and SAMHSA information
+- Transparent note about model limits
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project structure
+
+- `src/components/simulation-app.tsx`: main client UI
+- `src/lib/simulation/engine.ts`: rule-based simulation engine
+- `src/lib/simulation/presets.ts`: seed preset scenarios
+- `src/lib/simulation/types.ts`: shared model types

@@ -1,0 +1,6 @@
+- Build and maintain this project as an educational, fictional simulation only.
+- Keep medical disclaimers, uncertainty notes, and severe withdrawal warnings visible.
+- Do not add dangerous-use optimization features.
+- Do not add kratom as an active simulation mode. Static educational note only.
+- Keep the simulation engine modular under `src/lib/simulation`.
+- Validate changes with `npm run lint` and `npm run build` before shipping.
