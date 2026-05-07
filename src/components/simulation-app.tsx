@@ -4,6 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 
 import { explainCurrentState, simulateScenario } from "@/lib/simulation/engine";
 import { scenarioPresets } from "@/lib/simulation/presets";
+import { SiteFooter } from "@/components/site-footer";
 import {
   DEFAULT_INPUTS,
   METRIC_META,
@@ -692,6 +693,8 @@ export function SimulationApp() {
           </div>
         </section>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

@@ -19,9 +19,13 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://living-substance-simulation.vercel.app"),
   title: "Living Substance Simulation",
   description:
     "Educational, fictional nervous system simulation showing how alcohol and cannabis patterns may shift relief, craving, rebound anxiety, sleep, and stability over time.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
